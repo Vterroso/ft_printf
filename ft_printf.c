@@ -1,0 +1,66 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/03 17:14:00 by vterroso          #+#    #+#             */
+/*   Updated: 2023/05/03 18:02:01 by vterroso         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
+
+int	ft_formats(va_list args, char format)
+{
+	int	len;
+
+	len = 0;
+	if (format == 'c')
+		len += ft_putchar(va_arg(args, int));
+    if (format == 's')
+        len += ft_putstr(va_arg(args, char*));
+	return (len);
+}
+
+int	ft_printf(char const *str, ...)
+{
+	int		i;
+	int		len;
+	va_list	args;
+
+	i = 0;
+	len = 0;
+	va_start(args, str);
+	while (str[i] != '\0')
+	{
+		if (str[i] == '%')
+		{
+			i++;
+			len += ft_formats(args, str[i]);
+		}
+		else
+			len += ft_putchar(str[i]);
+		i++;
+	}
+	va_end(args);
+	return (len);
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	char c;
+    char *s;
+
+	c = 'f';
+    s = "blablabla";
+
+    printf("frase: %s letra:%c\n", s, c);
+    ft_printf("frase: %s letra:%c\n", s, c);
+    printf("puntero:%p", &s);
+
+	return (0);
+}
