@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:13:37 by vterroso          #+#    #+#             */
-/*   Updated: 2023/05/03 17:43:05 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:36:12 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,43 @@ int	ft_putstr(char *str)
 		i++;
 	}
 	return (i);
+}
+
+int	ft_putnbr_len(int nb)
+{
+	int	len;
+
+	len = 0;
+	while(nb)
+	{
+		nb /= 10;
+		len ++;
+	}
+	return (len);
+}
+
+int	ft_putnbr(int nb)
+{
+	int len;
+
+	len = ft_putnbr_len(nb);
+	if (nb == -2147483648)
+	{
+		ft_putstr("-2");
+		ft_putnbr(147483648);
+	}
+	if (nb < 0)
+	{
+		nb = -nb;
+		ft_putchar('-');
+		ft_putnbr(nb);
+	}
+	if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		ft_putchar(nb + '0');
+	return (len);	
 }

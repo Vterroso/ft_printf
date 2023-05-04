@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:14:00 by vterroso          #+#    #+#             */
-/*   Updated: 2023/05/03 18:02:01 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:42:06 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ int	ft_formats(va_list args, char format)
 		len += ft_putchar(va_arg(args, int));
     if (format == 's')
         len += ft_putstr(va_arg(args, char*));
+	if (format == 'p')
+		len += ft_ptr(va_arg(args, unsigned long long));
+	if (format == 'i' || format == 'd')
+		len += ft_putnbr(va_arg(args, int));
 	return (len);
 }
 
@@ -54,13 +58,20 @@ int	main(void)
 {
 	char c;
     char *s;
+	int	nb;
 
 	c = 'f';
     s = "blablabla";
+	nb = 351356;
 
     printf("frase: %s letra:%c\n", s, c);
     ft_printf("frase: %s letra:%c\n", s, c);
-    printf("puntero:%p", &s);
+    printf("puntero:%p\n", &s);
+	ft_printf("puntero:%p\nñ", &s);
+	printf("nb = %d  o %i\n", nb, nb);
+	ft_printf("nb = %d  o %i\n", nb, nb);
+
+	
 
 	return (0);
 }

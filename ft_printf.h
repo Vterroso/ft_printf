@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:13:51 by vterroso          #+#    #+#             */
-/*   Updated: 2023/05/03 17:43:14 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:35:41 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,7 @@
 int	ft_printf(char const *, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *str);
+int	ft_putnbr(int nb);
+int ft_ptr(unsigned long long nb);
 
 #endif
