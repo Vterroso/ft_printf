@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:13:37 by vterroso          #+#    #+#             */
-/*   Updated: 2023/05/04 16:36:12 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/05/04 18:20:47 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,3 +74,4 @@ int	ft_putnbr(int nb)
 		ft_putchar(nb + '0');
 	return (len);	
 }
+
