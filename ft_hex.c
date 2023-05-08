@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:51:41 by vterroso          #+#    #+#             */
-/*   Updated: 2023/05/08 13:43:04 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:07:44 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_hex_len(unsigned int nb)
 
 int	ft_hex(unsigned int nb, char format)
 {
-	int len;
+	int	len;
 
 	len = ft_hex_len(nb);
 	if (nb == 0)
@@ -48,6 +48,6 @@ int	ft_hex(unsigned int nb, char format)
 			ft_putchar((nb - 10) + 'A');
 	}
 	else
-		ft_putchar('0');
+		ft_putchar(nb + '0');
 	return (len);
 }

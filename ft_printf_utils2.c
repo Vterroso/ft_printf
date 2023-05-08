@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 18:20:56 by vterroso          #+#    #+#             */
-/*   Updated: 2023/05/08 13:38:24 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:09:27 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_unsigned_len(unsigned int nb)
 	int	len;
 
 	len = 0;
+	if (nb <= 0)
+		len++;
 	while (nb)
 	{
 		nb /= 10;

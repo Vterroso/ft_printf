@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:13:51 by vterroso          #+#    #+#             */
-/*   Updated: 2023/05/08 13:27:01 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:06:24 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-int	ft_printf(char const *, ...);
+int	ft_printf(char const *str, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *str);
 int	ft_putnbr(int nb);

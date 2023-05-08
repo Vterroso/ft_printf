@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:14:00 by vterroso          #+#    #+#             */
-/*   Updated: 2023/05/08 13:41:43 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:08:36 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_printf(char const *str, ...)
 		}
 		else
 			len += ft_putchar(str[i]);
-		i++;
+			i++;
 	}
 	va_end(args);
 	return (len);
@@ -67,11 +67,10 @@ int	main(void)
 	char *s;
 	int nb;
 	unsigned int un;
-	//unsigned int hex;
 
 	c = 'f';
 	s = "blablabla";
-	nb = -351356;
+	nb = -10;
 	un = 9454999;
 	
 	printf("frase: %s letra:%c\n", s, c);
@@ -82,5 +81,7 @@ int	main(void)
 	ft_printf("nb = %d  o %i\n", nb, nb);
 	printf("Sin signo: %u\n", un);
 	ft_printf("Sin signo: %u\n", un);
+	printf("Hexa: %x    %X\n", nb, nb);
+	ft_printf("Hexa: %x   %X\n", nb, nb);
 	return (0);
 }*/

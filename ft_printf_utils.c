@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:13:37 by vterroso          #+#    #+#             */
-/*   Updated: 2023/05/08 13:46:40 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:10:06 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,12 @@ int	ft_putnbr_len(int nb)
 	int	len;
 
 	len = 0;
-	while (nb != 0)
+	if (nb <= 0)
+	{
+		len++;
+		nb = -nb;
+	}
+	while (nb)
 	{
 		nb /= 10;
 		len++;
@@ -51,7 +56,7 @@ int	ft_putnbr_len(int nb)
 
 int	ft_putnbr(int nb)
 {
-	int len;
+	int	len;
 
 	len = ft_putnbr_len(nb);
 	if (nb == -2147483648)
@@ -59,13 +64,12 @@ int	ft_putnbr(int nb)
 		ft_putstr("-2");
 		ft_putnbr(147483648);
 	}
-	if (nb < 0)
+	else if (nb < 0)
 	{
-		nb = -nb;
 		ft_putchar('-');
-		ft_putnbr(nb);
+		ft_putnbr(-nb);
 	}
-	if (nb > 9)
+	else if (nb > 9)
 	{
 		ft_putnbr(nb / 10);
 		ft_putnbr(nb % 10);
