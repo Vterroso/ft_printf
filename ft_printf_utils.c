@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:13:37 by vterroso          #+#    #+#             */
-/*   Updated: 2023/05/04 18:20:47 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/05/08 13:46:40 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_putchar(char c)
 
 int	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)
@@ -41,10 +41,10 @@ int	ft_putnbr_len(int nb)
 	int	len;
 
 	len = 0;
-	while(nb)
+	while (nb != 0)
 	{
 		nb /= 10;
-		len ++;
+		len++;
 	}
 	return (len);
 }
@@ -72,6 +72,5 @@ int	ft_putnbr(int nb)
 	}
 	else
 		ft_putchar(nb + '0');
-	return (len);	
+	return (len);
 }
-

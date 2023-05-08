@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:13:51 by vterroso          #+#    #+#             */
-/*   Updated: 2023/05/04 17:59:43 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/05/08 13:27:01 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int	ft_putnbr(int nb);
 int	ft_ptr(unsigned long long nb);
 int	ft_unsigned_len(unsigned int nb);
 int	ft_unsigned(unsigned int nb);
+int	ft_hex(unsigned int nb, char format);
 
 #endif

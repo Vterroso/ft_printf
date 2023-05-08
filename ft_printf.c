@@ -6,7 +6,7 @@
 /*   By: vterroso <vterroso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:14:00 by vterroso          #+#    #+#             */
-/*   Updated: 2023/05/04 18:11:40 by vterroso         ###   ########.fr       */
+/*   Updated: 2023/05/08 13:41:43 by vterroso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ int	ft_formats(va_list args, char format)
 		len += ft_putnbr(va_arg(args, int));
 	if (format == 'u')
 		len += ft_unsigned(va_arg(args, unsigned int));
+	if (format == 'x' || format == 'X')
+		len += (ft_hex(va_arg(args, unsigned int), format));
+	if (format == '%')
+		len += ft_putchar('%');
 	return (len);
 }
 
@@ -53,8 +57,9 @@ int	ft_printf(char const *str, ...)
 	va_end(args);
 	return (len);
 }
-
+/*
 #include <stdio.h>
+
 
 int	main(void)
 {
@@ -62,12 +67,13 @@ int	main(void)
 	char *s;
 	int nb;
 	unsigned int un;
+	//unsigned int hex;
 
 	c = 'f';
 	s = "blablabla";
 	nb = -351356;
 	un = 9454999;
-
+	
 	printf("frase: %s letra:%c\n", s, c);
 	ft_printf("frase: %s letra:%c\n", s, c);
 	printf("puntero:%p\n", &s);
@@ -77,4 +83,4 @@ int	main(void)
 	printf("Sin signo: %u\n", un);
 	ft_printf("Sin signo: %u\n", un);
 	return (0);
-}
+}*/
